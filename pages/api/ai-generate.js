@@ -22,11 +22,11 @@ export default async function handler(req, res) {
           {
             role: "system",
             content:
-              "Você é um assistente que escreve descrições curtas e úteis para cards de tarefas em um quadro Kanban.",
+              "You are an assistant that writes short, useful descriptions for task cards on a Kanban board.",
           },
           {
             role: "user",
-            content: `Crie uma descrição curta e clara (2-4 frases) para o card com título: "${title}".`,
+            content: `Create a short, clear description (2–4 sentences) for the card titled: "${title}".`,
           },
         ],
         temperature: 0.7,
@@ -37,11 +37,11 @@ export default async function handler(req, res) {
 
     const description =
       data.choices?.[0]?.message?.content?.trim() ||
-      "Descrição gerada automaticamente.";
+      "Auto-generated description.";
 
     res.status(200).json({ description });
   } catch (e) {
     console.error(e);
-    res.status(500).json({ error: "Erro ao chamar a OpenAI API." });
+    res.status(500).json({ error: "OpenAI API request failed." });
   }
 }
