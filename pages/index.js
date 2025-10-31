@@ -79,7 +79,7 @@ function Navbar({ onAddCard, onGenerateAI }) {
             cursor: "pointer",
           }}
         >
-          + Novo Card
+          + Add a Card
         </button>
         <button
           onClick={onGenerateAI}
@@ -92,7 +92,7 @@ function Navbar({ onAddCard, onGenerateAI }) {
             cursor: "pointer",
           }}
         >
-          ✨ Gerar com IA
+          ✨ Create with AI
         </button>
       </div>
     </nav>
@@ -442,11 +442,11 @@ export default function Home() {
       {/* Novo Card */}
       {modalType === "create" && (
         <Modal
-          title="Novo Card"
+          title="New Card"
           onClose={() => setModalType(null)}
           actions={
             <>
-              <button onClick={() => setModalType(null)}>Cancelar</button>
+              <button onClick={() => setModalType(null)}>Cancel</button>
               <button
                 onClick={saveNewCard}
                 style={{
@@ -457,7 +457,7 @@ export default function Home() {
                   padding: "8px 12px",
                 }}
               >
-                Salvar
+                Save
               </button>
             </>
           }
@@ -465,7 +465,7 @@ export default function Home() {
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Título..."
+            placeholder="Title..."
             style={{
               width: "100%",
               padding: 10,
@@ -477,7 +477,7 @@ export default function Home() {
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="Descrição..."
+            placeholder="Description..."
             rows={4}
             style={{
               width: "100%",
@@ -492,11 +492,11 @@ export default function Home() {
       {/* Gerar com IA */}
       {modalType === "ai" && (
         <Modal
-          title="Gerar Card com IA 🤖"
+          title="Create Card with AI 🤖"
           onClose={() => setModalType(null)}
           actions={
             <>
-              <button onClick={() => setModalType(null)}>Cancelar</button>
+              <button onClick={() => setModalType(null)}>Cancel</button>
               <button
                 onClick={generateAIContent}
                 style={{
@@ -507,7 +507,7 @@ export default function Home() {
                   padding: "8px 12px",
                 }}
               >
-                Gerar
+                Create
               </button>
             </>
           }
@@ -529,7 +529,7 @@ export default function Home() {
       {/* Editar */}
       {modalType === "edit" && (
         <Modal
-          title="Editar Card"
+          title="Edit Card"
           onClose={() => setModalType(null)}
           actions={
             <>
@@ -544,7 +544,7 @@ export default function Home() {
                   padding: "8px 12px",
                 }}
               >
-                Salvar
+                Save
               </button>
             </>
           }
@@ -579,7 +579,7 @@ export default function Home() {
       {/* Excluir */}
       {modalType === "delete" && (
         <Modal
-          title="Excluir Card"
+          title="Delete Card"
           onClose={() => setModalType(null)}
           actions={
             <>
@@ -594,13 +594,13 @@ export default function Home() {
                   padding: "8px 12px",
                 }}
               >
-                Excluir
+                Delete
               </button>
             </>
           }
         >
           <p style={{ textAlign: "center" }}>
-            Deseja realmente excluir o card{" "}
+            Are you sure you want to delete this card?{" "}
             <strong>{currentCard?.title}</strong>?
           </p>
         </Modal>
