@@ -533,7 +533,7 @@ export default function Home() {
           onClose={() => setModalType(null)}
           actions={
             <>
-              <button onClick={() => setModalType(null)}>Cancelar</button>
+              <button onClick={() => setModalType(null)}>Cancel</button>
               <button
                 onClick={saveEdit}
                 style={{
@@ -583,7 +583,7 @@ export default function Home() {
           onClose={() => setModalType(null)}
           actions={
             <>
-              <button onClick={() => setModalType(null)}>Cancelar</button>
+              <button onClick={() => setModalType(null)}>Cancel</button>
               <button
                 onClick={confirmDelete}
                 style={{
