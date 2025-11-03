@@ -508,7 +508,7 @@ export default function Home() {
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Digite o título para gerar com IA..."
+            placeholder="Enter a title to generate with AI..."
             style={{
               width: "100%",
               padding: 10,
