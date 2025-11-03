@@ -126,7 +126,7 @@ function Modal({ title, children, onClose, actions }) {
             marginTop: 0,
             marginBottom: 12,
             fontSize: 20,
-            fontWeight: 700,
+            fontWeight: 700, // bold (negrito)
             color: THEME.colors.text,
             textAlign: "center",
           }}

@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🎨 Estilo global */
 body {
   @apply bg-gradient-to-br from-indigo-100 via-pink-100 to-purple-100 text-gray-800 font-sans antialiased;
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   background: linear-gradient(to bottom right, #fdf1ff, #eaeaff);
-  background-attachment: fixed; /* garante que não repete */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
