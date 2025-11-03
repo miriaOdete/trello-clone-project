@@ -5,9 +5,6 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { supabase } from "../lib/supabaseClient";
 import Image from "next/image";
 
-/* ============================================================
-   THEME
-   ============================================================ */
 const THEME = {
   radius: 12,
   colors: {
@@ -30,12 +27,9 @@ const THEME = {
   },
 };
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
 function Navbar({ onAddCard, onGenerateAI }) {
   return (
-    <nav
+    <div
       style={{
         position: "fixed",
         top: 0,
@@ -43,7 +37,6 @@ function Navbar({ onAddCard, onGenerateAI }) {
         right: 0,
         height: 70,
         background: "rgba(255,255,255,0.9)",
-        backdropFilter: "blur(12px)",
         borderBottom: `1px solid ${THEME.colors.grayBorder}`,
         boxShadow: THEME.shadow.sm,
         display: "flex",
@@ -95,7 +88,7 @@ function Navbar({ onAddCard, onGenerateAI }) {
           ✨ Create with AI
         </button>
       </div>
-    </nav>
+    </div>
   );
 }
 
