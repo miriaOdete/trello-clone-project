@@ -92,9 +92,6 @@ function Navbar({ onAddCard, onGenerateAI }) {
   );
 }
 
-/* ============================================================
-   MODAL
-   ============================================================ */
 function Modal({ title, children, onClose, actions }) {
   return (
     <div
@@ -166,9 +163,6 @@ function Modal({ title, children, onClose, actions }) {
   );
 }
 
-/* ============================================================
-   APP PRINCIPAL
-   ============================================================ */
 const COLUMNS = [
   { id: "todo", name: "To Do" },
   { id: "doing", name: "Doing" },
@@ -206,7 +200,6 @@ export default function Home() {
     setLoading(false);
   }
 
-  // ======== CRIAR =========
   async function handleAddCard() {
     setTitle("");
     setContent("");
@@ -225,7 +218,6 @@ export default function Home() {
     setModalType(null);
   }
 
-  // ======== GERAR COM IA =========
   async function handleGenerateAI() {
     setTitle("");
     setModalType("ai");
@@ -253,7 +245,6 @@ export default function Home() {
     setModalType(null);
   }
 
-  // ======== EDITAR / EXCLUIR =========
   function openEdit(card) {
     setCurrentCard(card);
     setTitle(card.title);
@@ -281,7 +272,6 @@ export default function Home() {
     setModalType(null);
   }
 
-  // ======== DRAG & DROP =========
   async function onDragEnd(result) {
     const { source, destination } = result;
     if (!destination) return;
@@ -308,7 +298,7 @@ export default function Home() {
   if (loading)
     return (
       <div style={{ textAlign: "center", padding: 40, fontSize: 18 }}>
-        Carregando...
+        Loading...
       </div>
     );
 
@@ -316,7 +306,6 @@ export default function Home() {
     <>
       <Navbar onAddCard={handleAddCard} onGenerateAI={handleGenerateAI} />
 
-      {/* BOARD */}
       <div style={{ paddingTop: 100, paddingBottom: 60 }}>
         <DragDropContext onDragEnd={onDragEnd}>
           <div
@@ -430,9 +419,6 @@ export default function Home() {
         </DragDropContext>
       </div>
 
-      {/* ========== MODAIS ========== */}
-
-      {/* Novo Card */}
       {modalType === "create" && (
         <Modal
           title="New Card"
@@ -482,7 +468,6 @@ export default function Home() {
         </Modal>
       )}
 
-      {/* Gerar com IA */}
       {modalType === "ai" && (
         <Modal
           title="Create Card with AI 🤖"
@@ -519,7 +504,6 @@ export default function Home() {
         </Modal>
       )}
 
-      {/* Editar */}
       {modalType === "edit" && (
         <Modal
           title="Edit Card"
@@ -569,7 +553,6 @@ export default function Home() {
         </Modal>
       )}
 
-      {/* Excluir */}
       {modalType === "delete" && (
         <Modal
           title="Delete Card"
