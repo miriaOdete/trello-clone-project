@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# see https://help.github.com/articles/ignoring-files/
 
 # dependencies
 /node_modules
@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-/out/
+out/
 
 # production
 /build
@@ -30,8 +30,17 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (ignore segredos)
+/.env
+/.env.*
+/.env.local
+/.env.development
+/.env.development.local
+/.env.test
+/.env.test.local
+/.env.production
+/.env.production.local
+!.env.example   # mantém apenas o exemplo sem segredos
 
 # vercel
 .vercel
@@ -39,6 +48,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-#env
-trello-clone-project\.env.local
